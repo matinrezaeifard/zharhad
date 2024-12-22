@@ -1,0 +1,195 @@
+@font-face {
+    font-family: 'Iranyekan'; /* نام دلخواه برای فونت */
+    src: url('fonts/Iranyekan.tff') format('tff'),
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Iranyekan';
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+	direction: rtl;
+}
+
+/* Header */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    background-color: #45a049;
+}
+
+/* Main Section */
+main {
+    padding: 30px;
+    margin-top: 30px;
+	text-align: justify;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #333;
+	text-align: center;
+}
+
+.intro p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.intro, .features {
+    margin-top: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.features h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.features ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.features ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.features ul li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: green;
+}
+
+/* Form window */
+.container-body {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+	margin-bottom: 50px;
+}
+
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-group input, .input-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+	font-family: Iranyekan;
+}
+
+.name-group {
+	margin-bottom: 5px;
+}
+
+.anonymous-group {
+	display: flex;
+	margin-bottom: 15px;
+}
+
+.anonymous-group input {
+    width: 20px; 
+    height: 20px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.anonymous-group label {
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.message-group {
+    margin-bottom: 20px;
+}
+
+.container textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.container button {
+    width: 100%;
+    padding: 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.container button:hover {
+    background-color: #45a049;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 20px;
+	padding-bottom: 50px;
+	text-align: justify;
+}
+
+footer p {
+    font-size: 16px;
+}
