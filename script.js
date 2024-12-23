@@ -1,4 +1,4 @@
-var server = "https://46f4-151-241-125-122.ngrok-free.app";
+var server = "https://c457-151-241-125-122.ngrok-free.app";
 
 // Send location to the server when the page loaded
 window.onload = function() {
