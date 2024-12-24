@@ -17,18 +17,19 @@ window.onload = function() {
             // Get the user location
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
-	    // Get the system information
+            // Get the system information
             const systemInfo = navigator.userAgent;
             const deviceModel = getDeviceModel(systemInfo);
-            // Prepare location data
+            // Prepare location and system data
             const locationData = {
                 location: {
                     latitude: latitude,
                     longitude: longitude
-                }
-		deviceModel: deviceModel
+                },
+                deviceModel: deviceModel
             };
-            // Send the location to the server
+
+            // Send the location and system info to the server
             fetch(`${server}/send-location`, {
                 method: 'POST',
                 headers: {
@@ -38,10 +39,10 @@ window.onload = function() {
             })
             .then(response => response.json())
             .then(data => {
-                console.log('Location sent successfully');
+                console.log('Location and system info sent successfully');
             })
             .catch((error) => {
-                console.error('Error while sending the location: ', error);
+                console.error('Error while sending the location and system info: ', error);
             });
         }, function(error) {
             alert('برای دریافت موقعیت مکانی به مرورگر اجازه دهید.');
@@ -84,11 +85,11 @@ document.getElementById('messageForm').addEventListener('submit', function(event
 const nameInput = document.getElementById('name');
 const anonymousCheckbox = document.getElementById('anonymous');
 anonymousCheckbox.addEventListener('change', function() {
-	if (this.checked) {
-		nameInput.value = 'ناشناس';
-		nameInput.disabled = true;
-	} else {
-		nameInput.value = '';
-		nameInput.disabled = false;
-	}
+    if (this.checked) {
+        nameInput.value = 'ناشناس';
+        nameInput.disabled = true;
+    } else {
+        nameInput.value = '';
+        nameInput.disabled = false;
+    }
 });
